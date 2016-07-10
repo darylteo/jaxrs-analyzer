@@ -50,9 +50,9 @@ public class TestClass2 {
     public static ClassResult getResult() {
 
         final MethodResult firstMethod = MethodResultBuilder.withResponses(HttpResponseBuilder.newBuilder().andEntityTypes(Types.PRIMITIVE_INT).build())
-                .andResponseMediaTypes("text/html").andMethod(HttpMethod.GET).build();
+                .andResponseMediaTypes("text/html").andMethod(HttpMethod.GET).andMethodName("method").build();
         final MethodResult secondMethod = MethodResultBuilder.withResponses(HttpResponseBuilder.withStatues(202).build())
-                .andMethod(HttpMethod.POST).andRequestBodyType(Types.STRING).build();
+                .andMethod(HttpMethod.POST).andMethodName("post").andRequestBodyType(Types.STRING).build();
         return ClassResultBuilder.withResourcePath("test").andResponseMediaTypes("application/json").andMethods(firstMethod, secondMethod).build();
     }
 
