@@ -112,12 +112,12 @@ public class Element {
 
         @Override
         public Set<Object> getPossibleValues() {
-            return Collections.unmodifiableSet(super.getPossibleValues());
+            return new HashSet<>(super.getPossibleValues());
         }
 
         @Override
         public Set<String> getTypes() {
-            return Collections.unmodifiableSet(super.getTypes());
+            return new HashSet<>(super.getTypes());
         }
     }
 
