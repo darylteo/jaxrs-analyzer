@@ -26,7 +26,7 @@ import java.util.List;
 public class TestStore {
 
     public Model getModel(final String id) {
-        return null;
+        return new Model(id);
     }
 
     public String addModel(final Model model) {

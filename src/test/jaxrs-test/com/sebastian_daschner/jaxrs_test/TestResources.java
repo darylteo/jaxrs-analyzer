@@ -62,6 +62,16 @@ public class TestResources {
         return Response.created(uri).build();
     }
 
+    @POST
+    @Path("{fail}")
+    public Response simplePostNull(String string) {
+        final Model managedModel = this.testStore.getModel(null);
+
+        final URI uri = URI.create("/test/" + managedModel.getId());
+
+        return Response.created(uri).build();
+    }
+
     @PUT
     public Response put(final Model model) {
         this.testStore.addModel(model);
