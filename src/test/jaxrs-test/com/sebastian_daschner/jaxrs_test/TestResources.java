@@ -83,6 +83,15 @@ public class TestResources {
         }
     }
 
+    @GET
+    @Path("{container}")
+    public ModelResult getModelInContainer (@PathParam("id") final String id) {
+        synchronized (this) {
+            return new ModelResult(this.testStore.getModel(id));
+        }
+    }
+
+
     @DELETE
     @Path("{id}")
     public Response delete(@PathParam("id") final Map<String, List<String>> id) {
@@ -107,4 +116,9 @@ public class TestResources {
         }
     }
 
+    public static class ModelResult extends Result<Model> {
+        public ModelResult(Model data) {
+            super(data);
+        }
+    }
 }
