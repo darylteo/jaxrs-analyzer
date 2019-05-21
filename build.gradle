@@ -1,14 +1,9 @@
-buildscript {
-    repositories { jcenter() }
-    dependencies {
-        classpath 'com.github.jengelman.gradle.plugins:shadow:1.2.3'
-    }
+plugins {
+    id 'java'
+    id 'maven'
+    id 'application'
+    id 'com.github.johnrengelman.shadow' version '5.0.0'
 }
-
-apply plugin: 'java'
-apply plugin: 'maven'
-apply plugin: 'application'
-apply plugin: 'com.github.johnrengelman.shadow'
 
 group = 'com.sebastian-daschner'
 version = '0.10-SNAPSHOT'
